@@ -1,21 +1,19 @@
 import express from "express";
 import { ApolloServer, gql } from "apollo-server-express";
-
-const typeDefs = gql`
-    type Query {
-        hello: String
-    }
-`;
-
-const resolvers = {
-    Query: {
-        hello: () => "Hello world!",
-    },
-};
+import { resolvers } from "./graphql/resolvers";
+import typeDefs from "./graphql/typeDefintion";
+import { connectDatabase } from "./database/conn";
 
 async function startServer() {
     const app = express();
     const apolloServer = new ApolloServer({ typeDefs, resolvers });
+
+    const connectionStatus = await connectDatabase();
+
+    if (!connectionStatus) {
+        console.log("Database connection failed");
+        return;
+    }
 
     await apolloServer.start();
 
