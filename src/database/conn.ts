@@ -9,6 +9,7 @@ export async function connectDatabase(): Promise<boolean> {
         await sequelize.sync();
         return true;
     } catch (error) {
+        console.log(error);
         return false;
     }
 }

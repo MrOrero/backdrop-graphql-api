@@ -3,6 +3,7 @@ import { ApolloServer, gql } from "apollo-server-express";
 import { resolvers } from "./graphql/resolvers";
 import typeDefs from "./graphql/typeDefintion";
 import { connectDatabase } from "./database/conn";
+import { errorHandler } from "./middleware/error-handler";
 
 async function startServer() {
     const app = express();
@@ -22,6 +23,8 @@ async function startServer() {
     app.use((req, res) => {
         res.status(404).send("Not found");
     });
+
+    app.use(errorHandler);
 
     app.listen(4000, () => {
         console.log("Server started on http://localhost:4000/graphql");
