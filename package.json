@@ -1,0 +1,33 @@
+{
+    "name": "backdrop-graphql-api",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "build": "tsc",
+        "build-watch": "tsc --watch",
+        "start": "node dist/app.js",
+        "start:dev": "nodemon --exec ts-node src/app.ts",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "apollo-server-express": "^3.12.0",
+        "express": "^4.18.2",
+        "graphql": "^16.6.0",
+        "pg": "^8.10.0",
+        "pg-hstore": "^2.3.4",
+        "sequelize": "^6.31.0"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.17",
+        "@types/graphql": "^14.5.0",
+        "@types/node": "^18.15.11",
+        "@types/pg": "^8.6.6",
+        "@types/sequelize": "^4.28.14",
+        "nodemon": "^2.0.22",
+        "typescript": "^5.0.4"
+    }
+}
