@@ -1,6 +1,7 @@
 const array: any = [];
 const characterCodeCache: any = [];
 
+// This function is based on the implementation of the Levenshtein distance algorithm
 export default function calculateLevenDistance(first: any, second: any) {
     if (first === second) {
         return 0;

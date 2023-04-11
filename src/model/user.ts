@@ -13,6 +13,7 @@ interface UserAttributes {
 
 interface UserInstance extends Model<UserAttributes>, UserAttributes {}
 
+// Define the user model and its attributes
 const User = sequelize.define<UserInstance>("user", {
     id: {
         type: Sequelize.INTEGER,

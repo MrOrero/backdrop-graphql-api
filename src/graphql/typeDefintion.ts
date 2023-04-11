@@ -1,10 +1,7 @@
 import { gql } from "apollo-server-express";
 
+// Construct a schema, using GraphQL schema language
 const typeDefs = gql`
-    type Query {
-        hello: String
-    }
-
     type User {
         id: ID!
         user_name: String!
@@ -19,6 +16,16 @@ const typeDefs = gql`
         bankCode: String!
         accountNumber: String!
         accountName: String!
+    }
+
+    input GetAccountNameData {
+        id: ID!
+        bankCode: String!
+        accountNumber: String!
+    }
+
+    type Query {
+        getAccountName(getAccountNameData: GetAccountNameData): String!
     }
 
     type Mutation {
