@@ -1,3 +1,4 @@
 node_modules/
 .prettierrc
 nodemon.json
+src/jest-environment.ts

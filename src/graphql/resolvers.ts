@@ -3,7 +3,7 @@ import calculateLevenDistance from "../util/calculate-leven-distance";
 import { formatCustomError } from "../util/format-error";
 import { validateAccount, toSentenceCase } from "../util/helper-methods";
 
-// Interdfaces used in the resolvers for type checking
+// Interfaces used in the resolvers for type checking
 interface BankDetails {
     id: string;
     bankCode: string;
@@ -129,7 +129,6 @@ export const resolvers = {
                 await user.save();
                 return user;
             } catch (error) {
-                console.log(error);
                 throw error;
             }
         },

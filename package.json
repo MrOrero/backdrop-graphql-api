@@ -8,7 +8,7 @@
         "build-watch": "tsc --watch",
         "start": "node dist/app.js",
         "start:dev": "nodemon src/app.ts",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "jest"
     },
     "keywords": [],
     "author": "",
@@ -26,10 +26,14 @@
         "@types/axios": "^0.14.0",
         "@types/express": "^4.17.17",
         "@types/graphql": "^14.5.0",
+        "@types/jest": "^29.5.0",
         "@types/node": "^18.15.11",
         "@types/pg": "^8.6.6",
         "@types/sequelize": "^4.28.14",
+        "jest": "^29.5.0",
         "nodemon": "^2.0.22",
+        "ts-jest": "^29.1.0",
+        "ts-node": "^10.9.1",
         "typescript": "^5.0.4"
     }
 }

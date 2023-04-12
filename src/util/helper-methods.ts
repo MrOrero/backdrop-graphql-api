@@ -14,7 +14,6 @@ export async function validateAccount(accountNumber: string, bankCode: string) {
                 },
             }
         );
-        console.log(response.data);
         return response.data.data;
     } catch (error) {
         console.log(error);
@@ -22,15 +21,15 @@ export async function validateAccount(accountNumber: string, bankCode: string) {
     }
 }
 
-export function toSentenceCase(name: String) {
+export function toSentenceCase(name: string) {
+    // Trim leading and trailing whitespace from the input string
+    name = name.trim();
+
     // Split the input string by whitespaces
     const words = name.split(/\s+/);
 
     // Loop through each word and capitalize the first letter
     const result = words.map(word => {
-        // Trim leading and trailing whitespace
-        word = word.trim();
-
         // Capitalize the first letter and convert the rest to lowercase
         if (word.length > 0) {
             return word[0].toUpperCase() + word.slice(1).toLowerCase();
